@@ -153,7 +153,7 @@ def post(user_id, *_, post_id):
     forum_details = get_forum_details(cursor, forum_id);
     connection_done(conn[1])
 
-    return post_view(first_post, forum_details, posts, user_id is not -1)
+    return post_view(first_post, forum_details, posts, user_id != -1)
 
 @server.route("/post/like/<post_id>", methods=["GET"])
 @token_required

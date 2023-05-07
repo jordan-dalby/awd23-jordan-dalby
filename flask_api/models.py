@@ -185,7 +185,7 @@ def get_post_posts(user_id, post_id):
     return posts, first_post, forum_id
 
 def has_user_liked_post(cursor, user_id, post_id):
-    if user_id is not -1: 
+    if user_id != -1: 
         cursor.execute(f"SELECT user_id FROM likes WHERE post_id='{post_id}' AND user_id='{user_id}'")
         return cursor.rowcount != 0
     else:
