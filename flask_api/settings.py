@@ -48,8 +48,6 @@ def soft_token_check(f):
     @wraps(f)
     def decorator(*args, **kwargs):
         token = request.cookies.get('token')
- 
-        print(token)
 
         if not token or token == "null":
             # no cookie found
