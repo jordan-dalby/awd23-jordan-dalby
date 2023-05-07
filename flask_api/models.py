@@ -238,8 +238,3 @@ def shorten_string(string, max):
     if string is None:
         return None
     return string[:max] + "..." if len(string) > max else string
-
-def merge_data(data, data2):
-    z = data.copy()
-    z.update(data2)
-    return z
