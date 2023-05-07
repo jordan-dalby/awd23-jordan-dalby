@@ -153,7 +153,7 @@ def post(user_id, *_, post_id):
     forum_details = get_forum_details(cursor, forum_id);
     connection_done(conn[1])
 
-    return post_view(first_post, forum_details, posts)
+    return post_view(first_post, forum_details, posts, user_id is not -1)
 
 @server.route("/post/like/<post_id>", methods=["GET"])
 @token_required
@@ -291,12 +291,9 @@ def reply(user_id, *_, post_id):
 
     return jsonify({'response': 'success', 'action': 1})
 
-@server.route("/post/like", methods=["POST"])
-
 @server.route("/user/token")
 @token_required
 def check_user_token(user_id, username, admin):
-    session["user_id"] = user_id
     return jsonify({'response': 'Login token valid, sign in', 'action': 1, 'user_id': user_id, 'username': username, 'admin': admin})
 
 """

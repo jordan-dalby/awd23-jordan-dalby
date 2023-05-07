@@ -119,7 +119,7 @@
             <div class="col">
                 <div class="row">
                     <div class="col">
-                        <textarea id="post-reply-textarea" style="width: 98%;margin-top: 16px;margin-right: 16px;margin-bottom: 16px;margin-left: 6px;min-height: 150px;background: rgba(255,255,255,0);border-color: rgb(176,189,211);padding-left: 12px;padding-top: 12px;color: rgb(255,255,255);" placeholder="Enter your reply..."></textarea>
+                        <textarea id="post-reply-textarea" style="width: 98%;margin-top: 16px;margin-right: 16px;margin-bottom: 16px;margin-left: 6px;min-height: 150px;background: rgba(255,255,255,0);border-color: rgb(176,189,211);padding-left: 12px;padding-top: 12px; color:{% if not logged_in %}rgb(176,189,211){% else %}rgb(255,255,255){% endif %};" placeholder="Enter your reply..." {% if not logged_in %}disabled{% endif %}>{% if not logged_in %}You need to log in to reply...{% endif %}</textarea>
                     </div>
                 </div>
                 <div class="row" id="invalid-reply" style="display: none;">

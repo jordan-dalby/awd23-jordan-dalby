@@ -18,5 +18,5 @@ def post_create_view(forum_details):
 def not_found_view():
     return render_template('not-found.html', title="Not Found")
 
-def post_view(first_post, forum_details, posts):
-    return render_template('post.html', title="Post", first_post=first_post, forum_details=forum_details, posts=posts)
+def post_view(first_post, forum_details, posts, logged_in):
+    return render_template('post.html', title="Post", first_post=first_post, forum_details=forum_details, posts=posts, logged_in=logged_in)

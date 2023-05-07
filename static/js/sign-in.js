@@ -13,7 +13,7 @@ function get_token()
 // log out
 function log_out()
 {
-    $.cookie("token", null, { 'path': "/" });
+    $.removeCookie("token", { 'path': "/" });
     window.localStorage.removeItem('username');
     window.localStorage.removeItem('user-id');
     window.location.reload();
